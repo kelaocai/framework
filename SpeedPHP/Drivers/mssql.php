@@ -46,7 +46,7 @@ class db_mssql {
 	 */
 	public function setlimit($sql, $limit)
 	{
-		if(!eregi(",", $limit))$limit = '0,'.$limit;
+		if(!preg_match(",", $limit))$limit = '0,'.$limit;
 		$sql .= " LIMIT {$limit}";
 		return $this->translimit($sql);
 	}
