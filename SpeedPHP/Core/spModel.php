@@ -253,7 +253,7 @@ class spModel {
 		}else{
 			if(null != $conditions)$where = "WHERE ".$conditions;
 		}
-		$sql = "SELECT COUNT({$this->pk}) AS SP_COUNTER FROM {$this->tbl_name} {$where}";
+		$sql = "SELECT COUNT(*) AS SP_COUNTER FROM {$this->tbl_name} {$where}";
 		$result = $this->_db->getArray($sql);
 		return $result[0]['SP_COUNTER'];
 	}
